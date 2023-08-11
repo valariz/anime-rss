@@ -44,12 +44,13 @@ def generate_rss_by_type(type=1):
     for item in get_latest_by_type(type):
         rss += """
 <item>
+    {}
     <title>{}</title>
     <link>{}</link>
     <description>{}</description>
-    <>{}<>
+    
 </item>
-""".format(f"{item[2]} - Episode {item[1]}", "https://www4.gogoanimes.fi" + item[0], f"Episode {item[1]} of {item[2]} is out!", item[3])
+""".format(item[3], f"{item[2]} - Episode {item[1]}", "https://www4.gogoanimes.fi" + item[0], f"Episode {item[1]} of {item[2]} is out!")
 
     rss += '\n</channel>\n</rss>'
     return rss
