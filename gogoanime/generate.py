@@ -45,12 +45,11 @@ def generate_rss_by_type(type=1):
         rss += """
 <item>
     <title>{}</title>
-    {}
     <link>{}</link>
-    <description>{}</description>
+    <description><img src={}"></description>
     
 </item>
-""".format(f"{item[2]} - Episode {item[1]}", item[3], "https://www4.gogoanimes.fi" + item[0], f"Episode {item[1]} of {item[2]} is out!")
+""".format(f"{item[2]} - Episode {item[1]}", "https://www4.gogoanimes.fi" + item[0], item[3] )
 
     rss += '\n</channel>\n</rss>'
     return rss
