@@ -45,7 +45,7 @@ def generate_rss_by_type(type=1):
         rss += """
 <item>
     <title>{}</title>
-    <img src="{}"
+    <img src="{}">
     <link>{}</link>
     <description>{}</description>
     
