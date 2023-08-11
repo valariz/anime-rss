@@ -32,7 +32,7 @@ def get_latest_by_type(type=1):
 
 
 def generate_rss_by_type(type=1):
-    types = ['(Sub)', '(Dub)', '(Chinese)']
+    types = ['(Eng)', '(Dub)', '(Chinese)']
     rss = f"""
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
@@ -58,7 +58,7 @@ def generate_rss_by_type(type=1):
 
 
 types = {
-    'sub': 1,
+    'eng': 1,
     'dub': 2,
     'chinese': 3
 }
