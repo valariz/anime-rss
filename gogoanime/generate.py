@@ -26,7 +26,7 @@ def get_latest_by_type(type=1):
     response = requests.get(
         'https://ajax.gogo-load.com/ajax/page-recent-release.html', headers=headers, params=params).text
 
-    regex = r"<li>\s*\n.*\n.*<a\s*href=[\"'](?P<href>.*?-episode-(?P<episode>\d+))[\"']\s*title=[\"'](?P<title>.*?)[\"']"
+    regex = r"<li>\s*\n.*\n.*<a\s*href=[\"'](?P<href>.*?-episode-(?P<episode>\d+))[\"']\s*title=[\"'](?P<title>.*?)[\"'].\s*<img\s*src=[\"'](?P<image>.*?)[\"']"
     matches = list(re.findall(regex, response, re.MULTILINE))
     return matches
 
@@ -47,8 +47,9 @@ def generate_rss_by_type(type=1):
     <title>{}</title>
     <link>{}</link>
     <description>{}</description>
+    <>{}<>
 </item>
-""".format(f"{item[2]} - Episode {item[1]}", "https://www4.gogoanimes.fi" + item[0], f"Episode {item[1]} of {item[2]} is out!")
+""".format(f"{item[2]} - Episode {item[1]}", "https://www4.gogoanimes.fi" + item[0], f"Episode {item[1]} of {item[2]} is out!", "{item[3]})
 
     rss += '\n</channel>\n</rss>'
     return rss
