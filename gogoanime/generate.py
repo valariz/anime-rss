@@ -44,7 +44,7 @@ def generate_rss_by_type(type=1):
     for item in get_latest_by_type(type):
         rss += """
 <item>
-    {}
+    <img src="{}"
     <title>{}</title>
     <link>{}</link>
     <description>{}</description>
