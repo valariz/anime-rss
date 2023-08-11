@@ -39,6 +39,8 @@ def generate_rss_by_type(type=1):
 
 <channel>
 <title>Gogoanime {types[type-1]} - RSS Feed</title>
+<link>https://github.com/valariz/anime-rss</link>
+<description>Iseng-iseng berhadiah!</description>
 """
 
     for item in get_latest_by_type(type):
