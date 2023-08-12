@@ -26,7 +26,7 @@ jobs:
     - name: Generate rss (AnimePahe)
       run: |
         python ./animepahe/generate.py
-    - name: Pull Remote Changes
+    - name: commit Remote Changes
           run: git commit
     - name: Pull Remote Changes
           run: git pull
