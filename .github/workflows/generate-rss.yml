@@ -27,7 +27,7 @@ jobs:
       run: |
         python ./animepahe/generate.py
     - name: Pull Remote Changes
-          run: git pull
+      run: git pull
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         # Optional but recommended
